@@ -201,6 +201,35 @@
         transition: transform 0.2s ease, box-shadow 0.2s ease;
       }
 
+      .participant-group {
+        margin-top: 2rem;
+      }
+
+      .participant-group h3 {
+        margin-bottom: 0.9rem;
+        font-size: 1.08rem;
+      }
+
+      .participant-grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+
+      .participant-card .logo-slot {
+        width: 100%;
+        min-height: 96px;
+        border: 1px dashed #c7d2fe;
+        border-radius: 12px;
+        background: #f8faff;
+        color: #6366f1;
+        display: grid;
+        place-items: center;
+        margin-bottom: 0.75rem;
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+
       .card:hover,
       .task-card:hover {
         transform: translateY(-4px);
@@ -306,12 +335,17 @@
       }
 
       .fade-in {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .js .fade-in {
         opacity: 0;
         transform: translateY(12px);
         transition: opacity 0.6s ease, transform 0.6s ease;
       }
 
-      .fade-in.visible {
+      .js .fade-in.visible {
         opacity: 1;
         transform: translateY(0);
       }
@@ -340,6 +374,21 @@
           padding-top: 5.1rem;
         }
       }
+      .logo-slot {
+        width: 100px; /* или любой нужный размер */
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .participant-logo {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain; /* сохранит пропорции логотипа */
+      }
+
     </style>
   </head>
   <body>
@@ -355,7 +404,7 @@
               конкретные решения с понятными сроками и бюджетом.
             </p>
             <div class="hero-actions">
-              <a class="btn btn-primary" href="#cta">Разместить задачу</a>
+              <a class="btn btn-primary" href="#cta">Создать задачу</a>
               <a class="btn btn-ghost" href="#cta">Предложить решение</a>
             </div>
           </div>
@@ -457,6 +506,96 @@
 
       <section class="section">
         <div class="container">
+          <span class="eyebrow">Примеры участников</span>
+          <h2 class="section-title">Отдельные карточки участников платформы</h2>
+
+          <div class="participant-group">
+            <h3>Крупный бизнес</h3>
+            <div class="participant-grid">
+              <article class="card fade-in participant-card">
+                <div class="logo-slot"><img src="imgs/logo_sber.jpg" alt="Сбер Логотип" class="participant-logo"></div>
+                <h4>Сбер</h4>
+                <p>Краткое описание компании и её интереса к задачам платформы.</p>
+              </article>
+              <article class="card fade-in participant-card">
+                <div class="logo-slot"><img src="imgs/logo_avito.svg" alt="Авито Логотип" class="participant-logo"></div>
+                <h4>Авито</h4>
+                <p>Краткое описание компании и её интереса к задачам платформы.</p>
+              </article>
+              <article class="card fade-in participant-card">
+                <div class="logo-slot"><img src="imgs/logo_yandex.png" alt="Яндекс Логотип" class="participant-logo"></div>
+                <h4>Яндекс</h4>
+                <p>Краткое описание компании и её интереса к задачам платформы.</p>
+              </article>
+              <article class="card fade-in participant-card">
+                <div class="logo-slot"><img src="imgs/logo_a101.svg" alt="A101 Логотип" class="participant-logo"></div>
+                <h4>A101</h4>
+                <p>Краткое описание компании и её интереса к задачам платформы.</p>
+              </article>
+              <article class="card fade-in participant-card">
+                <div class="logo-slot"><img src="imgs/logo_pioneer.png" alt="PIONEER Логотип" class="participant-logo"></div>
+                <h4>PIONEER</h4>
+                <p>Краткое описание компании и её интереса к задачам платформы.</p>
+              </article>
+              <article class="card fade-in participant-card">
+                <div class="logo-slot"><img src="imgs/logo_magnit.png" alt="Магнит Логотип" class="participant-logo"></div>
+                <h4>Магнит</h4>
+                <p>Краткое описание компании и её интереса к задачам платформы.</p>
+              </article>
+              <article class="card fade-in participant-card">
+                <div class="logo-slot"><img src="imgs/logo_sibur.png" alt="Сибур Логотип" class="participant-logo"></div>
+                <h4>Сибур</h4>
+                <p>Краткое описание компании и её интереса к задачам платформы.</p>
+              </article>
+              <article class="card fade-in participant-card">
+                <div class="logo-slot"><img src="imgs/logo_2gis.png" alt="2GIS Логотип" class="participant-logo"></div>
+                <h4>2GIS</h4>
+                <p>Краткое описание компании и её интереса к задачам платформы.</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="participant-group">
+            <h3>Социальные предприниматели</h3>
+            <div class="participant-grid">
+              <article class="card fade-in participant-card">
+                <div class="logo-slot"><img src="imgs/logo_immer.png" alt="Иммерсивный театр народов России «Калык шынык» Логотип" class="participant-logo"></div>
+                <h4>Иммерсивный театр народов России «Калык шынык»</h4>
+                <p>Краткое описание проекта, компетенций и формата сотрудничества.</p>
+              </article>
+              <article class="card fade-in participant-card">
+                <div class="logo-slot"><img src="imgs/logo_varki.jpg" alt="ИП Иванов И.И (вязанные изделия) Логотип" class="participant-logo"></div>
+                <h4>ИП Иванов И.И (вязанные изделия)</h4>
+                <p>Краткое описание проекта, компетенций и формата сотрудничества.</p>
+              </article>
+              <article class="card fade-in participant-card">
+                <div class="logo-slot"><img src="imgs/logo_museum.jpg" alt="Музей «В тишине» Логотип" class="participant-logo"></div>
+                <h4>Музей «В тишине»</h4>
+                <p>Краткое описание проекта, компетенций и формата сотрудничества.</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="participant-group">
+            <h3>Государственные учреждения</h3>
+            <div class="participant-grid">
+              <article class="card fade-in participant-card">
+                <div class="logo-slot"><img src="imgs/logo_moscow.jpg" alt="Департамент торговли и услуг Логотип" class="participant-logo"></div>
+                <h4>Департамент торговли и услуг</h4>
+                <p>Краткое описание задач учреждения и ожидаемых социальных решений.</p>
+              </article>
+              <article class="card fade-in participant-card">
+                <div class="logo-slot"><img src="imgs/logo_pushkin.png" alt="Государственный музей имени Пушкина Логотип" class="participant-logo"></div>
+                <h4>Государственный музей имени Пушкина</h4>
+                <p>Краткое описание задач учреждения и ожидаемых социальных решений.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
           <span class="eyebrow">Пример задачи</span>
           <h2 class="section-title">Закупка сувенирной продукции</h2>
           <article class="task-card fade-in">
@@ -523,19 +662,27 @@
     </footer>
 
     <script>
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.2 }
-      );
+      document.documentElement.classList.add("js");
 
-      document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
+      const fadeItems = document.querySelectorAll(".fade-in");
+
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.2 }
+        );
+
+        fadeItems.forEach((el) => observer.observe(el));
+      } else {
+        fadeItems.forEach((el) => el.classList.add("visible"));
+      }
 
       const leadForm = document.getElementById("lead-form");
       const status = document.getElementById("form-status");
